@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Consistency Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="start-screen">
+            <h1>Beat Consistency Analyzer</h1>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="bpm-slider">BPM: <span id="bpm-value">120</span></label>
+                    <input type="range" id="bpm-slider" min="40" max="240" value="120">
+                </div>
+                <div class="control-group">
+                    <label>Hits:</label>
+                    <div id="hit-buttons">
+                        <button class="hit-option" data-hits="16">16</button>
+                        <button class="hit-option active" data-hits="32">32</button>
+                        <button class="hit-option" data-hits="64">64</button>
+                        <button class="hit-option" data-hits="128">128</button>
+                    </div>
+                </div>
+            </div>
+            <p class="start-message">Press any key to start.</p>
+        </div>
+
+        <div id="playing-screen">
+            <div class="measuring-text">Measuring...</div>
+            <div class="progress-display">Hits: <span id="hit-counter">0</span> / <span id="total-hits-display">32</span></div>
+        </div>
+
+        <div id="results-screen">
+            <canvas id="histogram-chart"></canvas>
+            <div class="results-summary"></div>
+            <p class="restart-message">Press Enter to return to Title</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Debug Log Area -->
+    <div id="debug-log-container">
+        <h4>Debug Log <button id="copy-log-btn">Copy Log</button></h4>
+        <pre id="debug-log"></pre>
+    </div>
+</body>
+</html>
