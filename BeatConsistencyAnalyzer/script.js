@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastInteractionTime = 0;
     let lastInteractionType = '';
 
+    const VERSION = "2.0.2"; // Define current version
+    document.getElementById('version-display').textContent = `v${VERSION}`;
+
     // --- Event Listeners ---
     bpmSlider.addEventListener('input', (e) => {
         bpm = parseInt(e.target.value, 10);

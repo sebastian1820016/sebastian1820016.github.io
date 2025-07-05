@@ -22,6 +22,13 @@ Create a web-based version of the Beat Consistency Analyzer, migrating the funct
 - **Visualization:** Use a JavaScript charting library (e.g., Chart.js) to render the results histogram dynamically, replacing the static Matplotlib image.
 - **Deployment:** The final product will be a set of static files (HTML, CSS, JS) that can be easily hosted on services like GitHub Pages or Netlify.
 
+## Version Control
+- **Current Version:** 2.0.2
+- **Versioning Rules:**
+    - **Major (X.0.0):** Significant new features or major architectural changes.
+    - **Minor (0.Y.0):** Small feature additions or enhancements.
+    - **Build (0.0.Z):** Bug fixes, performance improvements, or minor adjustments.
+
 ## Development Guidelines
 - **Cross-Platform Compatibility:** When making changes, always ensure that the application functions correctly on both desktop (PC) browsers and mobile (smartphone/tablet) browsers. Pay particular attention to input handling (keyboard, mouse, touch) and responsive layout.
 

@@ -27,7 +27,17 @@ body {
     padding: 20px;
 }
 
+#start-screen, #playing-screen, #results-screen, #history-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #start-screen {
+    position: relative; /* For positioning #version-corner */
     width: 100%;
     height: 100%;
     display: flex; /* Only start-screen is flex by default */
@@ -40,14 +50,21 @@ body {
 #results-screen,
 #history-screen {
     display: none; /* All other screens are hidden by default */
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-h1 { font-size: 3em; margin-bottom: 20px; }
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#version-corner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    color: #aaa;
+    z-index: 10; /* Ensure it's above other elements */
+}
 
 h2 { font-size: 2.5em; margin-bottom: 15px; }
 
