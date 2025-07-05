@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const commentInput = document.getElementById('comment-input');
     const historyTableBody = document.getElementById('history-table-body');
 
+    // Assign version text content here, after the DOM is ready
+    document.getElementById('version-display').textContent = `v${VERSION}`;
+
     // Game & State
     let state = 'START';
     let bpm = 120;
