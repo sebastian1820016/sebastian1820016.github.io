@@ -228,11 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Global Input Handling ---
     function handleInteraction(e) {
-        // Prevent default for touch events to avoid scrolling/zooming
-        if (e.type === 'touchstart') {
-            e.preventDefault();
-        }
-
         // Ignore interactions on specific UI elements
         // For keydown, check if the target is an input (type text) or textarea
         if (e.type === 'keydown' && e.target.closest('input[type="text"], textarea')) {
