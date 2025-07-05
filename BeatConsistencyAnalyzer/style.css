@@ -124,18 +124,20 @@ button:hover, .hit-option:hover { background-color: #444; }
 
 #history-screen {
     justify-content: space-between;
-    padding-top: 0;
+    /* padding-top: 0; */ /* Removed to avoid height calculation issues */
 }
 
 #history-list-container {
     width: 100%;
     height: calc(100% - 120px); /* Adjust based on header/footer height */
     overflow-y: auto;
+    overflow-x: auto; /* Added for horizontal scrolling */
     border: 1px solid #444;
 }
 
 #history-table {
     width: 100%;
+    min-width: 600px; /* Ensure table can expand for horizontal scroll */
     border-collapse: collapse;
 }
 

@@ -52,3 +52,4 @@ Create a web-based version of the Beat Consistency Analyzer, migrating the funct
 - **2025年6月29日:** 公開URL   : file:///C:/Users/mori/PyProjects/sebastian1820016.github.io/BeatConsistencyAnalyzer/
 - **2025年7月5日:** Smartphone support (tap interaction).
 - **2025年7月5日:** Add History feature(using localStorage).
+- **2025年7月5日:** Updated version to 2.0.3. Fixed history table scrolling, tap double-counting issues, and version display position.
