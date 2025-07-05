@@ -25,7 +25,10 @@
                     </div>
                 </div>
             </div>
-            <p class="start-message">Press any key to start.</p>
+            <div class="start-actions">
+                <button id="start-game-btn">Start Measurement</button>
+                <button id="view-history-btn">View History</button>
+            </div>
         </div>
 
         <div id="playing-screen">
@@ -36,7 +39,36 @@
         <div id="results-screen">
             <canvas id="histogram-chart"></canvas>
             <div class="results-summary"></div>
-            <p class="restart-message">Press Enter to return to Title</p>
+            <div class="results-actions">
+                <input type="text" id="comment-input" placeholder="Enter comments here...">
+                <button id="save-result-btn">Save Result</button>
+                <button id="back-to-title-btn">Back to Title (Don't Save)</button>
+            </div>
+        </div>
+
+        <div id="history-screen">
+            <h2>History</h2>
+            <div id="history-list-container">
+                <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="date">Date <span class="sort-indicator"></span></th>
+                            <th data-sort="bpm">BPM <span class="sort-indicator"></span></th>
+                            <th data-sort="hits">Hits <span class="sort-indicator"></span></th>
+                            <th data-sort="stdDevPercent">Stability (%) <span class="sort-indicator"></span></th>
+                            <th data-sort="stdDevMs">Stability (ms) <span class="sort-indicator"></span></th>
+                            <th data-sort="comment">Comment <span class="sort-indicator"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-table-body">
+                        <!-- Dynamically filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="history-actions">
+                 <button id="clear-history-btn">Clear All History</button>
+                 <button id="history-back-btn">Back to Title</button>
+            </div>
         </div>
     </div>
 

@@ -22,6 +22,9 @@ Create a web-based version of the Beat Consistency Analyzer, migrating the funct
 - **Visualization:** Use a JavaScript charting library (e.g., Chart.js) to render the results histogram dynamically, replacing the static Matplotlib image.
 - **Deployment:** The final product will be a set of static files (HTML, CSS, JS) that can be easily hosted on services like GitHub Pages or Netlify.
 
+## Future Improvements
+- Smartphone support (tap interaction).
+
 ## Development Log
 - **2025年6月29日:** Web版開発開始。Python版からの移行を決定。
 - **2025年6月29日:** HTML, CSS, JavaScriptの基本ファイルを作成。
@@ -35,5 +38,7 @@ Create a web-based version of the Beat Consistency Analyzer, migrating the funct
 - **2025年6月29日:** ヒストグラムのビン設定をPython版と一致するように調整。
 - **2025年6月29日:** デバッグフラグとデバッグログ表示領域の連動を修正。
 - **2025年6月29日:** GitHub Pagesでの公開準備を開始。
-- **2025年6月29日:** レポジトリ: https://github.com/sebastian1820016/beat-consistency-analyzer
-- **2025年6月29日:** 公開URL   : https://sebastian1820016.github.io/beat-consistency-analyzer/
+- **2025年6月29日:** レポジトリ: https://github.com/sebastian1820016/sebastian1820016.github.io/tree/main/BeatConsistencyAnalyzer
+- **2025年6月29日:** 公開URL   : file:///C:/Users/mori/PyProjects/sebastian1820016.github.io/BeatConsistencyAnalyzer/
+- **2025年7月5日:** Smartphone support (tap interaction).
+- **2025年7月5日:** Add History feature(using localStorage).
