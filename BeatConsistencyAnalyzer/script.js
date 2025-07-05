@@ -245,14 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // State-specific logic
-        if (state === 'START') {
-            // In START state, any valid interaction starts the game
-            startGame();
-        } else if (state === 'PLAYING') {
+        if (state === 'PLAYING') {
             // In PLAYING state, any valid interaction records a hit
             recordHit();
         }
-        // In RESULTS and HISTORY states, interactions are handled by specific buttons,
+        // In START, RESULTS and HISTORY states, interactions are handled by specific buttons,
         // so general interactions should not trigger anything here.
     }
 

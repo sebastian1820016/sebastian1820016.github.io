@@ -27,17 +27,24 @@ body {
     padding: 20px;
 }
 
-#start-screen, #playing-screen, #results-screen, #history-screen {
+#start-screen {
     width: 100%;
     height: 100%;
-    display: flex;
+    display: flex; /* Only start-screen is flex by default */
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#playing-screen, #results-screen, #history-screen {
-    display: none; /* Hidden by default */
+#playing-screen,
+#results-screen,
+#history-screen {
+    display: none; /* All other screens are hidden by default */
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 { font-size: 3em; margin-bottom: 20px; }
