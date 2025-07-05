@@ -10,4 +10,4 @@ This repository contains the web interface for the Beat Consistency Analyzer pro
 
 ## Live Demo
 
-You can access the live demo of this web interface here: [https://sebastian1820016.github.io/beat-consistency-analyzer/](https://sebastian1820016.github.io/beat-consistency-analyzer/)
+You can access the live demo of this web interface here: [https://sebastian1820016.github.io/BeatConsistencyAnalyzer/](https://sebastian1820016.github.io/BeatConsistencyAnalyzer/)
