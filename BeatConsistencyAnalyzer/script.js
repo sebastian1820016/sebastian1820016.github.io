@@ -1,6 +1,6 @@
 console.log("Beat Consistency Analyzer script loaded.");
 
-const VERSION = "2.0.3"; // Define current version
+const VERSION = "2.0.4"; // Define current version
 
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements

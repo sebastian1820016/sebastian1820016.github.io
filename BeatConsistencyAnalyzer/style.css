@@ -131,13 +131,13 @@ button:hover, .hit-option:hover { background-color: #444; }
     width: 100%;
     height: calc(100% - 120px); /* Adjust based on header/footer height */
     overflow-y: auto;
-    overflow-x: auto; /* Added for horizontal scrolling */
+    /* overflow-x: auto; */ /* Removed for horizontal scrolling */
     border: 1px solid #444;
 }
 
 #history-table {
     width: 100%;
-    min-width: 600px; /* Ensure table can expand for horizontal scroll */
+    /* min-width: 600px; */ /* Removed to allow width: 100% */
     border-collapse: collapse;
 }
 
@@ -177,7 +177,7 @@ button:hover, .hit-option:hover { background-color: #444; }
     padding: 10px 8px;
     border-top: 1px solid #444;
     text-align: left;
-    white-space: nowrap;
+    white-space: normal; /* Allow text to wrap */
 }
 
 #history-table tbody tr:nth-child(even) { background-color: #1a1a1a; }
