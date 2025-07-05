@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let chart;
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     let sortState = { key: 'date', order: 'desc' };
+    let lastInteractionTime = 0;
+    let lastInteractionType = '';
 
     // --- Event Listeners ---
     bpmSlider.addEventListener('input', (e) => {
@@ -228,6 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Global Input Handling ---
     function handleInteraction(e) {
+        const currentTime = performance.now();
+        const COOLDOWN_TIME = 100; // milliseconds to prevent duplicate events
+
+        // Prevent default for touch events to avoid scrolling/zooming
+        // Only prevent default if not on a specific UI element that handles its own click
+        if (e.type === 'touchstart') {
+            // Check if the target is NOT a button, slider, etc. (handled by separate click listeners)
+            if (!e.target.closest('button, input[type="range"], .hit-option, textarea, #comment-input, #history-table thead, #debug-log-container')) {
+                e.preventDefault();
+            }
+        }
+
         // Ignore interactions on specific UI elements
         // For keydown, check if the target is an input (type text) or textarea
         if (e.type === 'keydown' && e.target.closest('input[type="text"], textarea')) {
@@ -238,6 +252,22 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.closest('button, input[type="range"], .hit-option, textarea, #comment-input, #history-table thead, #debug-log-container')) {
             return;
         }
+
+        // Prevent duplicate events (e.g., touchstart followed by mousedown)
+        if (state === 'PLAYING') { // Only apply this logic during PLAYING state
+            if (e.type === 'mousedown' && lastInteractionType === 'touchstart' && (currentTime - lastInteractionTime < COOLDOWN_TIME)) {
+                // This mousedown is likely a duplicate of a recent touchstart
+                return;
+            }
+            if (e.type === 'touchstart' && lastInteractionType === 'mousedown' && (currentTime - lastInteractionTime < COOLDOWN_TIME)) {
+                // This touchstart is likely a duplicate of a recent mousedown
+                return;
+            }
+        }
+
+        // Update last interaction time and type
+        lastInteractionTime = currentTime;
+        lastInteractionType = e.type;
 
         // State-specific logic
         if (state === 'PLAYING') {
